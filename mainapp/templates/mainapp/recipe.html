@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+  <h1>{{ recipe.title }}</h1>
+
+  {% if recipe.image %}
+    <p><img class="img-article-left" src="{{ recipe.image.url }}"></p>
+  {%  endif %}
+
+  {{ recipe.content|linebreaks }}
+
+  <p><strong>Время приготовления, мин:</strong> {{ recipe.cooking_time }}</p>
+  <div>
+    <p></p><strong>Автор:</strong> {{ recipe.author }}</p>
+  </div>
+  <div><hr></div>
+  <div>
+    <p><strong>Шаги приготовления: </strong> {{ recipe.cooking_steps|linebreaks}}</p>
+  </div>
+{% endblock %}
